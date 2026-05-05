@@ -15274,10 +15274,15 @@ body .modal-backdrop {
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
+/* Hide old floating call button (replaced by WhatsApp) */
+.floating-call {
+    display: none !important;
+}
+
 /* WhatsApp Floating Button */
 .whatsapp-float {
     position: fixed;
-    bottom: 30px;
+    bottom: 90px;
     right: 30px;
     width: 60px;
     height: 60px;
@@ -15304,7 +15309,7 @@ body .modal-backdrop {
 
 @media (max-width: 768px) {
     .whatsapp-float {
-        bottom: 20px;
+        bottom: 80px;
         right: 20px;
         width: 50px;
         height: 50px;
