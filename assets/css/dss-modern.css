@@ -273,7 +273,7 @@
 }
 
 .dss-check-list li:before {
-  content: "\\f00c";
+  content: "\f00c";
   position: absolute;
   left: 0;
   top: 0;
