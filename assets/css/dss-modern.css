@@ -1,0 +1,467 @@
+/* Delhi Secondary School admissions refresh */
+:root {
+  --dss-green: #006b3f;
+  --dss-green-dark: #003f27;
+  --dss-yellow: #ffd733;
+  --dss-ink: #10231b;
+  --dss-soft: #f3f8f2;
+}
+
+.dss-modern-header.full-width-header .rs-header .topbar-area.home8-topbar.dss-topbar {
+  background: var(--dss-green-dark) !important;
+  padding: 0;
+}
+
+.dss-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 42px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.dss-topbar-copy,
+.dss-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dss-topbar-actions a {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.dss-menu-area {
+  background: #ffffff !important;
+  box-shadow: 0 12px 35px rgba(0, 63, 39, 0.11);
+}
+
+.dss-modern-header .logo-part.dss-logo-part {
+  height: 88px;
+  line-height: 88px;
+  display: flex;
+  align-items: center;
+}
+
+.dss-modern-header .logo-part.dss-logo-part img {
+  max-height: 74px;
+  width: auto;
+}
+
+.dss-modern-header.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li {
+  margin-right: 24px;
+  height: 88px;
+}
+
+.dss-modern-header.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li:last-child {
+  margin-right: 0;
+}
+
+.dss-modern-header.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li a {
+  height: 88px;
+  line-height: 88px;
+  margin: 0;
+  padding: 0;
+}
+
+.dss-nav-menu > li > a {
+  color: var(--dss-ink) !important;
+  font-weight: 800 !important;
+}
+
+.dss-nav-menu .dss-nav-cta a {
+  background: var(--dss-yellow);
+  color: var(--dss-green-dark) !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 44px !important;
+  line-height: 1 !important;
+  padding: 0 18px !important;
+  border-radius: 6px;
+  box-shadow: 0 8px 18px rgba(255, 215, 51, 0.35);
+}
+
+.dss-admission-hero {
+  position: relative;
+  padding: 86px 0 74px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(0, 63, 39, 0.96), rgba(0, 107, 63, 0.82)),
+    url(assets/images/bg/main-home.jpg) center/cover no-repeat;
+}
+
+.dss-admission-hero:after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 10px;
+  background: var(--dss-yellow);
+}
+
+.dss-hero-copy {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  padding-right: 26px;
+}
+
+.dss-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 215, 51, 0.18);
+  color: var(--dss-yellow);
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.dss-hero-copy h1 {
+  color: #ffffff;
+  font-size: 60px;
+  line-height: 1.02;
+  margin-bottom: 20px;
+}
+
+.dss-hero-lead {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 20px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.dss-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.dss-outline-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 52px;
+  padding: 13px 22px;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.dss-outline-btn:hover {
+  color: var(--dss-yellow);
+}
+
+.dss-hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dss-hero-pills span {
+  padding: 9px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.dss-poster-frame {
+  margin: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.3);
+}
+
+.dss-poster-frame img {
+  width: 100%;
+  border-radius: 5px;
+  display: block;
+}
+
+.dss-poster-frame.compact {
+  box-shadow: 0 18px 45px rgba(0, 63, 39, 0.18);
+}
+
+.dss-benefits-section,
+.dss-contact-admissions {
+  padding: 86px 0 62px;
+  background: var(--dss-soft);
+}
+
+.dss-feature-card {
+  height: 100%;
+  padding: 28px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 107, 63, 0.12);
+  box-shadow: 0 12px 35px rgba(0, 63, 39, 0.08);
+}
+
+.dss-feature-card i {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  background: var(--dss-green);
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.dss-feature-card h3 {
+  color: var(--dss-ink);
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.dss-feature-card p {
+  margin: 0;
+}
+
+.dss-special-section {
+  padding: 74px 0;
+  background: #ffffff;
+}
+
+.dss-special-panel {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr auto;
+  align-items: center;
+  gap: 34px;
+  padding: 36px;
+  border-radius: 8px;
+  background: var(--dss-green-dark);
+  color: #ffffff;
+}
+
+.dss-special-panel h2,
+.dss-admission-copy h2 {
+  color: inherit;
+  margin-bottom: 0;
+}
+
+.dss-check-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.dss-check-list.two-column {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 22px 0 26px;
+}
+
+.dss-check-list li {
+  position: relative;
+  padding-left: 28px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.dss-check-list li:before {
+  content: "\\f00c";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: var(--dss-yellow);
+}
+
+.dss-special-actions {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+}
+
+.dss-special-actions small,
+.dss-terms {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dss-contact-admissions {
+  padding-bottom: 86px;
+}
+
+.dss-admission-copy {
+  padding-left: 20px;
+}
+
+.dss-admission-copy h2 {
+  color: var(--dss-ink);
+  font-size: 40px;
+  margin-bottom: 18px;
+}
+
+.dss-admission-copy p {
+  font-size: 17px;
+}
+
+.dss-admission-copy .dss-outline-btn {
+  color: var(--dss-green);
+}
+
+.dss-admission-copy .dss-terms {
+  color: #6a746f;
+  margin: 0;
+}
+
+.dss-modern-footer.rs-footer.home9-style.main-home {
+  background:
+    linear-gradient(135deg, rgba(0, 43, 27, 0.98), rgba(0, 107, 63, 0.94)),
+    url(assets/images/bg/footer-bg2.jpg) center/cover no-repeat;
+}
+
+.dss-modern-footer .footer-top {
+  padding: 62px 0 44px !important;
+}
+
+.dss-modern-footer .footer-logo img {
+  max-width: 165px !important;
+  border-radius: 8px;
+}
+
+.dss-footer-text {
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 18px;
+}
+
+.dss-footer-badge {
+  display: inline-flex;
+  padding: 9px 13px;
+  border-radius: 6px;
+  background: var(--dss-yellow);
+  color: var(--dss-green-dark);
+  font-weight: 900;
+}
+
+.dss-modern-footer .widget-title:before,
+.dss-modern-footer .site-map li:before {
+  background: var(--dss-yellow) !important;
+}
+
+.dss-modern-footer .address-widget li i:before,
+.dss-modern-footer a:hover {
+  color: var(--dss-yellow) !important;
+}
+
+.dss-modern-footer .footer-bottom {
+  padding: 22px 0 !important;
+}
+
+.dss-sticky-call {
+  position: fixed;
+  right: 30px;
+  bottom: 160px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--dss-yellow);
+  color: var(--dss-green-dark);
+  font-size: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+.dss-sticky-call:hover {
+  color: var(--dss-green-dark);
+  transform: scale(1.08);
+}
+
+@media (max-width: 1199px) {
+  .dss-hero-copy h1 {
+    font-size: 48px;
+  }
+
+  .dss-special-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 991px) {
+  .dss-modern-header .logo-part.dss-logo-part {
+    height: 76px;
+    line-height: 76px;
+    position: static !important;
+  }
+
+  .dss-modern-header .logo-part.dss-logo-part img {
+    max-height: 62px;
+  }
+
+  .dss-modern-header.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li,
+  .dss-modern-header.full-width-header .rs-header .menu-area .main-menu .rs-menu ul.nav-menu li a {
+    height: auto;
+    line-height: 1.4;
+  }
+
+  .dss-topbar-inner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .dss-topbar-actions {
+    display: none;
+  }
+
+  .dss-admission-hero {
+    padding: 62px 0;
+  }
+
+  .dss-hero-copy {
+    padding-right: 0;
+    margin-bottom: 34px;
+  }
+
+  .dss-admission-copy {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .dss-hero-copy h1 {
+    font-size: 38px;
+  }
+
+  .dss-hero-lead,
+  .dss-admission-copy p {
+    font-size: 16px;
+  }
+
+  .dss-check-list.two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .dss-special-panel {
+    padding: 26px 22px;
+  }
+
+  .dss-admission-copy h2 {
+    font-size: 30px;
+  }
+
+  .dss-sticky-call {
+    right: 20px;
+    bottom: 142px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
