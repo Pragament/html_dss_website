@@ -204,6 +204,58 @@
   box-shadow: 0 18px 45px rgba(0, 63, 39, 0.18);
 }
 
+/* Reserve the poster's 4:5 frame before media loads and between slides. */
+.dss-banner-viewport {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--dss-soft);
+}
+
+.dss-banner-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.dss-banner-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dss-banner-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 12px;
+  color: var(--dss-ink);
+}
+
+.dss-banner-controls[hidden] {
+  visibility: hidden;
+}
+
+.dss-banner-slide[hidden] {
+  display: none;
+}
+
+.dss-banner-controls button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 5px;
+  background: var(--dss-green-dark);
+  color: #fff;
+  cursor: pointer;
+}
+
+.dss-banner-controls button:focus-visible {
+  outline: 3px solid var(--dss-yellow);
+  outline-offset: 2px;
+}
+
 .dss-benefits-section,
 .dss-contact-admissions {
   padding: 86px 0 62px;

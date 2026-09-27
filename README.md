@@ -2,7 +2,7 @@
 
 Static website for Delhi Secondary School, Sangareddy. It includes school information, 2026–27 admissions, a gallery, a school inspection video, contact links, and CBSE public disclosure documents.
 
-The site uses plain HTML, CSS, and JavaScript with bundled Bootstrap, jQuery, and UI plugins. Jekyll builds the gallery from one Markdown file per item. The other HTML pages are copied unchanged. There is no application backend.
+The site uses plain HTML, CSS, and JavaScript with bundled Bootstrap, jQuery, and UI plugins. Jekyll builds the gallery from one Markdown file per item. The homepage also uses the collection for its featured banner carousel; other HTML pages are copied unchanged. There is no application backend.
 
 ## Local preview
 
@@ -71,6 +71,14 @@ An optional **caption** about the event.
 
 Upload the referenced media file too. Use `kind: video` for a video file. Keep the front matter fields and types shown above; `order` is a number and `visible` is a boolean. The Markdown body becomes the caption. `gallery.html` handles the layout, image lightbox, video controls, and empty-gallery message.
 
+## Homepage banner
+
+In Pages CMS, enable **Featured on homepage** on a photo entry to include it in the top banner carousel. This is independent of **Show in gallery**: a photo may appear on either page, both, or neither. Videos are excluded from the homepage banner. **Display order** sorts both the gallery and the featured slides.
+
+The current admissions poster is migrated as `_gallery/admissions-2026.md`, with `featured: true` and `visible: false`. Its CMS-selectable copy is `assets/images/gallery/admissions-2026.jpeg`; the original admissions image remains in use on other pages.
+
+The banner uses a fixed 4:5 frame with `object-fit: contain`, preserving full image proportions without layout shifts between slides. Multiple photos rotate every six seconds with previous/next and pause controls. Rotation pauses on hover, keyboard focus, and background tabs; reduced-motion users start with rotation paused. A single photo has no carousel controls. With no featured photos, the school introduction remains and no carousel is rendered. The school heading and introduction do not change with slides.
+
 ## Updating other content
 
 - Edit the relevant root-level HTML page directly. Navigation, footer, contact details, and admissions copy are duplicated across pages. Keep all affected copies, including `header.html` and `footer.html`, consistent; there is no automatic include or generation step.
@@ -90,7 +98,7 @@ For another static host, run `bundle exec jekyll build` and publish `_site/`, pr
 
 The domain configuration currently differs: `CNAME` contains `dsssangareddy.com`, while page canonical URLs, social metadata, and structured data use `dpsssangareddy.com`. Confirm the intended public domain before aligning those values.
 
-Run `bundle exec ruby tests/gallery_test.rb` to check the gallery build, migration, ordering, visibility, captions, and empty state. Before publishing, preview the changed pages at desktop and mobile widths and check:
+Run `bundle exec ruby tests/gallery_test.rb` to check gallery and featured-banner rendering, ordering, visibility, captions, and empty states. With Node.js 18 or newer, run `node --test tests/banner-carousel.test.js` to check carousel navigation, rotation, pause behavior, and reduced-motion handling. Before publishing, preview the changed pages at desktop and mobile widths and check:
 
 - Navigation, mobile menu, admissions anchors, and contact links.
 - Images, gallery interactions, and the homepage inspection video.
