@@ -1,0 +1,67 @@
+media:
+  input: assets/images/gallery
+  output: /assets/images/gallery
+  categories: [image, video]
+  rename: safe
+
+content:
+  - name: gallery
+    label: Gallery
+    type: collection
+    path: _gallery
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    subfolders: false
+    view:
+      primary: title
+      fields: [title, kind, order, visible]
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Item name
+        type: string
+        required: true
+        description: A unique name to find this photo or video in the CMS.
+      - name: kind
+        label: Media type
+        type: select
+        required: true
+        default: image
+        options:
+          values:
+            - name: image
+              label: Photo
+            - name: video
+              label: Video
+      - name: media
+        label: Photo or video
+        type: file
+        required: true
+        description: Upload or select a photo or video. Use MP4 for broad video compatibility.
+        options:
+          extensions: [jpg, jpeg, png, gif, webp, avif, mp4, webm]
+      - name: alt
+        label: Accessible description
+        type: string
+        required: true
+        description: Describe what the photo or video shows for visitors using screen readers.
+      - name: order
+        label: Display order
+        type: number
+        required: true
+        default: 200
+        description: Smaller numbers appear first. Existing items use 10, 20, 30, and so on.
+        options:
+          min: 0
+      - name: visible
+        label: Show in gallery
+        type: boolean
+        default: true
+        description: Turn off to hide this item from the gallery without deleting it.
+      - name: body
+        label: Caption (optional)
+        type: rich-text
+        description: Optional text shown below the photo or video. Leave blank for media only.

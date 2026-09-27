@@ -1,3 +1,13 @@
+/* Gallery captions authored through Pages CMS. */
+.dss-gallery-caption {
+  padding: 12px 4px 0;
+  overflow-wrap: anywhere;
+}
+
+.dss-gallery-caption p:last-child {
+  margin-bottom: 0;
+}
+
 /* Delhi Secondary School admissions refresh */
 :root {
   --dss-green: #006b3f;
