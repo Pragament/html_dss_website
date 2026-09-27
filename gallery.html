@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="en-IN">
 
@@ -135,150 +138,38 @@
         </div>
     </div>
     <!-- Breadcrumbs End -->
-    <!-- Events Section Start -->
+    <!-- Gallery items are managed in _gallery/*.md through Pages CMS. -->
     <div class="rs-gallery pt-100 pb-100 md-pt-70 md-pb-70">
         <div class="container">
             <div class="row">
+                {% assign gallery_items = site.gallery | where_exp: "item", "item.visible != false" | sort: "order" %}
+                {% for item in gallery_items %}
                 <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <video width="100%" height="250" controls>
-                                <source src="assets/images/gallery/new/VID-20230904-WA0033.mp4" type="video/mp4">
-                                  Your browser does not support the video tag.
-                            </video>
-                    </div>
+                    <figure class="gallery-img">
+                        {% if item.kind == 'video' %}
+                        <video width="100%" height="250" controls preload="metadata" aria-label="{{ item.alt | default: item.title | escape }}">
+                            <source src="{{ item.media | relative_url | escape }}">
+                            Your browser does not support embedded video.
+                            <a href="{{ item.media | relative_url | escape }}">Download {{ item.title | escape }}</a>
+                        </video>
+                        {% else %}
+                        <a class="image-popup" href="{{ item.media | relative_url | escape }}">
+                            <img src="{{ item.media | relative_url | escape }}" alt="{{ item.alt | default: item.title | escape }}" loading="lazy">
+                        </a>
+                        {% endif %}
+                        {% assign caption = item.content | strip %}
+                        {% if caption != '' %}
+                        <figcaption class="dss-gallery-caption">{{ item.content | markdownify }}</figcaption>
+                        {% endif %}
+                    </figure>
                 </div>
-
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/new/IMG-20230904-WA0026.jpg"><img
-                                src="assets/images/gallery/new/IMG-20230904-WA0026.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/new/IMG-20230904-WA0028.jpg"><img
-                                src="assets/images/gallery/new/IMG-20230904-WA0028.jpg" alt=""></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/new/IMG-20230904-WA0029.jpg"><img
-                                src="assets/images/gallery/new/IMG-20230904-WA0029.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/new/IMG-20230904-WA0030.jpg"><img
-                                src="assets/images/gallery/new/IMG-20230904-WA0030.jpg" alt=""></a>
-                    </div>
-                </div>
-
-
-
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/school11.jpeg"><img
-                                src="assets/images/gallery/school11.jpeg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/school12.jpeg"><img
-                                src="assets/images/gallery/school12.jpeg" alt=""></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/school10.jpeg"><img
-                                src="assets/images/gallery/school10.jpeg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/ground.jpg"><img
-                                src="assets/images/gallery/ground.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/image4.jpg"><img
-                                src="assets/images/gallery/image4.jpg" alt=""></a>
-                    </div>
-                </div>
-
-
-
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/image11.jpg"><img
-                                src="assets/images/gallery/image11.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/image12.jpg"><img
-                                src="assets/images/gallery/image12.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/image1.jpg"><img
-                                src="assets/images/gallery/image1.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/image5.jpg"><img
-                                src="assets/images/gallery/image5.jpg" alt=""></a>
-                    </div>
-                </div>
-
-
-
-                <!--<div class="col-lg-4 mb-30 col-md-6">-->
-                <!--    <div class="gallery-img">-->
-                <!--        <a class="image-popup" href="assets/images/gallery/image9.jpg"><img-->
-                <!--                src="assets/images/gallery/image9.jpg" alt=""></a>-->
-                <!--    </div>-->
-                <!--</div>-->
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/image8.jpg"><img
-                                src="assets/images/gallery/image8.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/image6.jpg"><img
-                                src="assets/images/gallery/image6.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/image10.jpg"><img
-                                src="assets/images/gallery/image10.jpg" alt=""></a>
-                    </div>
-                </div>
- <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/lab1.png"><img
-                                src="assets/images/gallery/lab1.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-30 col-md-6">
-                    <div class="gallery-img">
-                        <a class="image-popup" href="assets/images/gallery/lab2.png"><img
-                                src="assets/images/gallery/lab2.png" alt=""></a>
-                    </div>
-                </div>
-
-
+                {% else %}
+                <div class="col-12"><p>New gallery photos and videos are coming soon.</p></div>
+                {% endfor %}
             </div>
         </div>
     </div>
-    <!-- Events Section End -->
+
 
 <!-- Footer Start -->
 <footer id="rs-footer" class="rs-footer home9-style main-home dss-modern-footer">

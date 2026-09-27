@@ -1,0 +1,10 @@
+collections:
+  gallery:
+    output: false
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - tests
