@@ -40,12 +40,16 @@ Internet access is needed for external resources such as the Font Awesome CDN an
 
 ## Updating the gallery in Pages CMS
 
-1. Open [Pages CMS](https://app.pagescms.org/), sign in with GitHub, and grant its GitHub App access to `Pragament/html_dss_website` if needed. Follow the [official quick start](https://pagescms.org/docs/quick-start/) for initial account setup.
-2. Select this repository and the `main` branch, then open **Gallery**. The repository's `.pages.yml` configures the editor automatically.
-3. Create an item or open an existing one. Give it a unique **Item name**, choose **Photo** or **Video**, and upload or select the matching media file. MP4 is recommended for videos.
-4. Write an **Accessible description** describing the media. Add a **Caption** if you want visible text below it.
-5. Set **Display order**: smaller numbers appear first. Existing items use 10 through 190 in steps of 10, leaving room to insert items between them. Use distinct numbers for a predictable order.
-6. Leave **Show in gallery** enabled to display the item, or turn it off to hide it. Save the entry. Once the commit on `main` has deployed through GitHub Pages, check `/gallery.html`.
+For detailed step-by-step instructions, examples, review guidance, and troubleshooting, see the [Content creator guide](CONTENT_CREATOR_GUIDE.md).
+
+1. Fork `Pragament/html_dss_website` into your own GitHub account, sync your fork's `main`, and create a branch for the update.
+2. Open [Pages CMS](https://app.pagescms.org/), sign in with GitHub, and grant its GitHub App access to **your fork**. Select your fork and editing branch, then open **Gallery**. The copied `.pages.yml` configures the editor automatically.
+3. Create or edit an item. Fill in its name, media type, photo or video file, accessible description, display order, visibility, and optional caption. Save media and entries on the same branch.
+4. On GitHub, open a pull request from your fork's editing branch to `Pragament/html_dss_website:main`. Include both the Markdown entries and uploaded media files.
+5. Review checks and the Netlify preview if configured. Make corrections in Pages CMS on the same branch to update the PR.
+6. After a maintainer merges the PR and deployment succeeds, check the live `/gallery.html` page.
+
+Saving in your fork does not publish to the school website or automatically open a PR. Contributors do not need write access to the original repository. Editors with direct access can also use a review branch in the original repository; direct saves to its `main` trigger live publishing.
 
 Each entry is saved as a separate Markdown file in `_gallery/`. Uploads go to `assets/images/gallery/`, alongside the existing media. No HTML edits or manual index updates are needed when adding, editing, hiding, or deleting entries. Hiding an entry only removes it from the gallery; its media URL remains public. Deleting an entry does not delete the uploaded media, which may be used elsewhere.
 
