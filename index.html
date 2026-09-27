@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="en-IN">
 
@@ -135,9 +138,26 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <figure class="dss-poster-frame">
-                    <img src="assets/images/admissions/2026.jpeg" alt="Delhi Secondary School admissions open 2026-27 poster">
-                </figure>
+                {% assign featured_items = site.gallery | where: "featured", true | where: "kind", "image" | sort: "order" %}
+                {% if featured_items.size > 0 %}
+                <section class="dss-poster-frame dss-banner-carousel" aria-label="School highlights" aria-roledescription="carousel">
+                    <div class="dss-banner-viewport">
+                        {% for item in featured_items %}
+                        <div class="dss-banner-slide" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ forloop.length }}"{% unless forloop.first %} hidden{% endunless %}>
+                            <img src="{{ item.media | relative_url | escape }}" alt="{{ item.alt | default: item.title | escape }}"{% if forloop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% if featured_items.size > 1 %}
+                    <div class="dss-banner-controls" hidden>
+                        <button type="button" data-banner-prev aria-label="Previous banner">&#8592;</button>
+                        <span data-banner-status aria-live="polite" aria-atomic="true">1 / {{ featured_items.size }}</span>
+                        <button type="button" data-banner-next aria-label="Next banner">&#8594;</button>
+                        <button type="button" data-banner-pause>Pause slideshow</button>
+                    </div>
+                    {% endif %}
+                </section>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -449,5 +469,6 @@
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/contact.form.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/banner-carousel.js"></script>
 </body>
 </html>

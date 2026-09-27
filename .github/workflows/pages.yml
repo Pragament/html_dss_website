@@ -35,6 +35,9 @@ jobs:
       - name: Test gallery content and rendering
         run: bundle exec ruby tests/gallery_test.rb
 
+      - name: Test homepage carousel controls
+        run: node --test tests/banner-carousel.test.js
+
       - name: Configure GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         id: pages
