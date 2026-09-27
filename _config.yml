@@ -4,6 +4,7 @@ collections:
 
 exclude:
   - README.md
+  - CONTENT_CREATOR_GUIDE.md
   - Gemfile
   - Gemfile.lock
   - vendor
