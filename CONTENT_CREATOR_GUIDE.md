@@ -60,7 +60,7 @@ Open a photo entry, turn on **Featured on homepage**, and save on your editing b
 | On | On | Both |
 | Off | Off | Neither |
 
-**Display order** also controls the banner slide order, with smaller numbers first. Feature multiple photos to create a rotating carousel. A single featured photo displays without navigation buttons. The existing **Admissions 2026–27 banner** entry starts with homepage featuring on and gallery visibility off.
+**Display order** also controls the banner slide order, with smaller numbers first. Feature multiple photos to create a rotating carousel. A single featured photo displays without navigation buttons. The existing **Admissions 2027-2028 banner** entry starts with homepage featuring on and gallery visibility off.
 
 Banner photos fit inside a fixed 4:5 frame without cropping or stretching. Landscape photos may have empty space above and below; this keeps the banner height stable. The school heading and introductory paragraph stay in place while images change. Captions belong to the gallery cards and are not shown in the banner. Videos cannot be featured in the banner.
 
