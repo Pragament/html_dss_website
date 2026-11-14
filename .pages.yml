@@ -14,7 +14,7 @@ content:
     subfolders: false
     view:
       primary: title
-      fields: [title, kind, order, visible]
+      fields: [title, kind, order, visible, featured]
       sort: [order, title]
       default:
         sort: order
@@ -60,7 +60,12 @@ content:
         label: Show in gallery
         type: boolean
         default: true
-        description: Turn off to hide this item from the gallery without deleting it.
+        description: Controls the gallery page only. A featured photo can still appear on the homepage.
+      - name: featured
+        label: Featured on homepage
+        type: boolean
+        default: false
+        description: Show this photo in the homepage banner. Independent of Show in gallery. Videos are not used in the banner. Display order controls slide order.
       - name: body
         label: Caption (optional)
         type: rich-text

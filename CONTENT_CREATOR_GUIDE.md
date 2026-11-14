@@ -1,6 +1,6 @@
 # Content creator guide: school gallery
 
-Use this guide to add and manage photos and videos on the Delhi Secondary School gallery page, `/gallery.html`. Routine updates can be made in Pages CMS without editing HTML or installing software.
+Use this guide to add and manage photos and videos on the Delhi Secondary School gallery page, `/gallery.html`, and the featured photo carousel in the homepage top banner. Routine updates can be made in Pages CMS without editing HTML or installing software.
 
 The current CMS editor manages **Gallery** only. For changes to admissions, school contact details, the homepage, or disclosure documents, send the website maintainer the page name, replacement text, and any files to update.
 
@@ -43,10 +43,28 @@ Each entry contains one photo or one video. An event with five photos needs five
 | **Photo or video** | Upload a new file or select an existing one. Select a single file matching the media type. | `sports-day-relay-2026.jpg` |
 | **Accessible description** | Briefly describe what the media shows for visitors using screen readers. Required for both photos and videos. | `Students passing a baton during a relay race on the school grounds.` |
 | **Display order** | A number of zero or greater. Smaller numbers appear first. | `200` |
-| **Show in gallery** | Turn on to display the entry; turn off to remove it from the gallery without deleting it. | On |
+| **Show in gallery** | Controls whether the entry appears on the gallery page. Independent of homepage featuring. | On |
+| **Featured on homepage** | Turn on to show a photo in the homepage banner carousel. Videos are excluded. | Off |
 | **Caption (optional)** | Text displayed below the photo or video. Leave it blank for media only. | `Students take part in the annual sports day relay.` |
 
 The original entries use display numbers **10 through 190**, in steps of 10. New entries default to **200**; choose a different number when needed. The existing names such as “School gallery photo 02” are placeholders that you can make more descriptive.
+
+### Feature a photo in the homepage banner
+
+Open a photo entry, turn on **Featured on homepage**, and save on your editing branch. Submit the update through the same pull request process described below. The homepage reads these entries automatically; no HTML change is needed.
+
+| Show in gallery | Featured on homepage | Where a photo appears |
+| --- | --- | --- |
+| On | Off | Gallery only |
+| Off | On | Homepage banner only |
+| On | On | Both |
+| Off | Off | Neither |
+
+**Display order** also controls the banner slide order, with smaller numbers first. Feature multiple photos to create a rotating carousel. A single featured photo displays without navigation buttons. The existing **Admissions 2026–27 banner** entry starts with homepage featuring on and gallery visibility off.
+
+Banner photos fit inside a fixed 4:5 frame without cropping or stretching. Landscape photos may have empty space above and below; this keeps the banner height stable. The school heading and introductory paragraph stay in place while images change. Captions belong to the gallery cards and are not shown in the banner. Videos cannot be featured in the banner.
+
+To remove a photo from the homepage, turn off **Featured on homepage**. Turning off **Show in gallery** alone does not remove a featured photo from the homepage. If all featured photos are removed, the homepage keeps its text introduction without a carousel.
 
 ## 3. Add a photo
 
@@ -118,7 +136,7 @@ Check the current list before choosing a number. Avoid equal numbers when the or
 
 ## 7. Hide or delete an entry
 
-**To temporarily hide an entry:** turn off **Show in gallery** and save. To bring it back, turn the setting on and save again.
+**To temporarily hide an entry from the gallery:** turn off **Show in gallery** and save. To also hide a featured photo from the homepage, turn off **Featured on homepage**. To bring it back, turn the setting on and save again.
 
 **To permanently remove an entry:** delete the entry from the Gallery collection. After your pull request is merged and deployed, its card disappears. This does not automatically delete the uploaded photo or video.
 
@@ -223,6 +241,7 @@ media: /assets/images/gallery/science-exhibition-2026.jpg
 alt: "Students presenting a model of the solar system in a classroom."
 order: 200
 visible: true
+featured: false
 ---
 **Science exhibition:** students explain their solar system model to visitors.
 ```
@@ -237,16 +256,17 @@ media: /assets/images/gallery/annual-day-dance-2026.mp4
 alt: "Students performing a group dance on the school stage."
 order: 210
 visible: true
+featured: false
 ---
 A group performance during the annual day programme.
 ```
 
 These filenames are examples; upload the matching media files before using them. Preserve the two `---` lines around the entry fields. Text after the second line becomes the caption.
 
-- Keep field names exactly as shown: `title`, `kind`, `media`, `alt`, `order`, and `visible`.
+- Keep field names exactly as shown: `title`, `kind`, `media`, `alt`, `order`, `visible`, and the optional `featured` flag.
 - Use `image` or `video` for `kind`.
 - Use the exact media path, including spelling, capitalization, and extension.
-- Write `order` as a number and `visible` as `true` or `false`, without quotes.
+- Write `order` as a number and `visible` and `featured` as `true` or `false`, without quotes. When `featured` is absent, the entry is not featured.
 - Quote text containing a colon or other punctuation, as shown in the examples.
 - Keep one entry per file directly inside `_gallery/`.
 
