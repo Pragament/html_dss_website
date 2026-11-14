@@ -1,6 +1,6 @@
 # Delhi Secondary School website
 
-Static website for Delhi Secondary School, Sangareddy. It includes school information, 2026–27 admissions, a gallery, a school inspection video, contact links, and CBSE public disclosure documents.
+Static website for Delhi Secondary School, Sangareddy. It includes school information, 2027-2028 admissions, a gallery, a school inspection video, contact links, and CBSE public disclosure documents.
 
 The site uses plain HTML, CSS, and JavaScript with bundled Bootstrap, jQuery, and UI plugins. Jekyll builds the gallery from one Markdown file per item. The homepage also uses the collection for its featured banner carousel; other HTML pages are copied unchanged. There is no application backend.
 
